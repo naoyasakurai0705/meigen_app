@@ -1,0 +1,2 @@
+class Meigen < ApplicationRecord
+end
