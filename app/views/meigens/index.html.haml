@@ -1,1 +1,7 @@
-%p sakurai
+- if user_signed_in?
+  = link_to "ログアウト" ,destroy_user_session_path,method: :delete
+  %p ログイン中
+  #{current_user.name}
+- else
+  = link_to "twitterでサインインする" ,user_twitter_omniauth_authorize_path
+
