@@ -40,6 +40,9 @@ gem 'haml-rails'
 gem 'erb2haml'
 gem 'dotenv-rails'
 gem 'omniauth-twitter'
+gem 'carrierwave'
+gem 'rmagick'
+
 
 
 group :development, :test do
