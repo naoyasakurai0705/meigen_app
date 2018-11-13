@@ -39,6 +39,7 @@ gem 'devise'
 gem 'haml-rails'
 gem 'erb2haml'
 gem 'dotenv-rails'
+gem 'omniauth-twitter'
 
 
 group :development, :test do
