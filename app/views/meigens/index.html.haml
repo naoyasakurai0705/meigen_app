@@ -20,3 +20,12 @@
           %input.form-control{placeholder: "騎士団長殺し", type: "text", form: "create-image", name: "book-info"}
       = form_tag "/meigens/new", method: "GET", id: "create-image", class: "mt-3" do
         = submit_tag '画像生成', class: 'btn btn-primary'
+
+- if user_signed_in?
+  = link_to "ログアウト" ,destroy_user_session_path,method: :delete
+  %p ログイン中
+  #{current_user.name}
+- else
+  = link_to "twitterでサインインする" ,user_twitter_omniauth_authorize_path
+
+
