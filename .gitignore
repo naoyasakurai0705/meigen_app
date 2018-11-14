@@ -16,6 +16,8 @@
 # Ignore uploaded files in development
 /storage/*
 !/storage/.keep
+/app/images/meigen_image
+#仮置き　名言イメージ
 
 /node_modules
 /yarn-error.log
