@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   # twitter認証に必要
   root 'meigens#index'
   resources :meigens, only: [:index, :new]
+  resources :twitters, only: [:update]
+  get '/twitter/tweet', to: 'twitter#tweet'
+
 end

@@ -42,7 +42,7 @@ gem 'dotenv-rails'
 gem 'omniauth-twitter'
 gem 'carrierwave'
 gem 'rmagick'
-
+gem 'twitter'
 
 
 group :development, :test do
