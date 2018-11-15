@@ -2,7 +2,7 @@ class TwitterController < ApplicationController
   before_action :set_twitter_client
 
   def tweet
-    @twitter.update("テスト1\nテストしています。(後で消します)")
+    @twitter.update params[:text]
     redirect_to root_path
   end
 
