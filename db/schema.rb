@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_16_042623) do
+ActiveRecord::Schema.define(version: 2018_11_16_085619) do
 
   create_table "meigens", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.boolean "save_image", default: false, null: false
-    t.string "image", null: false
+    t.boolean "save_content", default: false, null: false
+    t.string "content", null: false
     t.string "book_url", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
