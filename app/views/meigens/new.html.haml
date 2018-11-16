@@ -1,6 +1,6 @@
 %p 画像生成ページ！！
-- if "meigen_image#{@user.id}.jpg"
-  = image_tag "meigen_image/#{@user.id}.jpg"
+- if "app/assets/images/provisional/#{@meigen.content}"
+  = image_tag "provisional/#{@meigen.content}"
 = form_tag twitter_tweet_path, method: "GET" do
   .form-group
     = label_tag :text, "シェアしたい名言"
