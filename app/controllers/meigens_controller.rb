@@ -1,5 +1,9 @@
 class MeigensController < ApplicationController
-  def index; end
+  # layout meigens, :only => :show
+  	# layout: false , :only => :show
+
+  def index
+  end
 
   def new
     @meigen = Meigen.new
@@ -15,5 +19,7 @@ class MeigensController < ApplicationController
   def show
   	@meigen = Meigen.find(params[:id])
   	@user = @meigen.user
+  	@twitter_card = "#{root_url}meigens/#{@meigen.id}"
+  	render :layout => 'twitter_card'
   end
 end
