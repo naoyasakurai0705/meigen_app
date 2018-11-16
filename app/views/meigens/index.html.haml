@@ -10,11 +10,11 @@
           .border.p-3
             .form-group
               %label{for: "exampleFormControlInput1"}本のタイトル
-              %input#exampleFormControlInput1.form-control{placeholder: "", type: "*"}
+              %input#title.form-control{placeholder: "", type: "*"}
             .form-group
               %label{for: "exampleFormControlInput1"}著者
-              %input#exampleFormControlInput1.form-control{placeholder: "", type: "*"}
-          %button.btn.btn-primary.mt-4{type: "submit"} 本を検索
+              %input#author.form-control{placeholder: "", type: "*"}
+          %button.btn.btn-primary.mt-4{type: "button", onClick: 'loadText()'} 本を検索
         .form-group.pt-5
           %label{for: "exampleFormControlTextarea1"} 検索結果
           %input.form-control{placeholder: "騎士団長殺し", type: "text", form: "create-image", name: "book-info"}
