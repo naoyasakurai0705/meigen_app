@@ -1,9 +1,12 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def twitter
     # You need to implement the method below in your model (e.g. app/models/user.rb)
-    @user = User.from_omniauth(request.env["omniauth.auth"])
-
     auth = request.env['omniauth.auth']
+    @user = User.from_omniauth(auth)
+    @user.name = auth['info']['name']
+    @user.nickname = auth['info']['nickname']
+    @user.save
+
     # 投稿に必要なauth_token, secret_tokenも取得する
     session[:oauth_token] = auth['credentials']['token']
     session[:oauth_token_secret] = auth['credentials']['secret']
