@@ -5,7 +5,7 @@ class BooksController < ApplicationController
     url = "https://www.googleapis.com/books/v1/volumes"
     query = {author:"尾田" , title:"ワンピース"}
     @book = BooksAPI.fetch(url, query)
-    render template: 'meigens/index'
+    render :json => @book
   end
 
 end
