@@ -1,6 +1,5 @@
 class MeigensController < ApplicationController
-  # layout meigens, :only => :show
-  	# layout: false , :only => :show
+  before_action :authenticate_user!, only: %i[index new]
 
   def index
   end

@@ -24,5 +24,11 @@
   background-color: $main-bk-color;
 }
 
+ @font-face{
+   font-family: "hoge";
+   src: font-url('Harenosora.otf') format('truetype');
+ }
 
-
+body{
+  font-family: 'hoge';
+}
