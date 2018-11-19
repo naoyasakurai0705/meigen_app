@@ -1,1 +1,8 @@
-= image_tag "provisional/#{@meigen.content}"
+.container-fluid
+  .row
+    .col-md-3.col-sm-2.col-12
+    .col-md-6.co1-sm-8.col-12.text-center
+      %h2.mt-5 名言画像
+      = image_tag "provisional/#{@meigen.content}",class: "img-fluid"
+      %p.mt-5 こちらの本について
+      = link_to "名言画像を作る" ,root_path
