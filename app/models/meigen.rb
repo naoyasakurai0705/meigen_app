@@ -14,6 +14,6 @@ require 'RMagick'
       self.pointsize = 20
       self.gravity = Magick::CenterGravity
     end
-    img_resize.write("app/assets/images/provisional/#{user.id}-#{Time.now.to_s.delete!(' +:-')}.jpg")
+    img_resize.write("public/images/#{user.id}-#{Time.now.to_s.delete!(' +:-')}.jpg")
   end
 end

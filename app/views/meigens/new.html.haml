@@ -3,8 +3,8 @@
     .col-md-3.col-sm-2.col-12
     .col-md-6.co1-sm-8.col-12.text-center
       %h3.mt-5 名言画像を生成しました
-      - if "app/assets/images/provisional/#{@meigen.content}"
-        = image_tag "provisional/#{@meigen.content}" ,class: "img-fluid"
+      - if "public/images/#{@meigen.content}"
+        = image_tag "/images/#{@meigen.content}" ,class: "img-fluid"
       = form_tag twitter_tweet_path, method: "GET" do
         .form-group.mt-4
           = label_tag :text, "シェアしたい名言"
