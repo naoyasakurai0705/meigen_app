@@ -12,7 +12,7 @@ class MeigensController < ApplicationController
     @meigen.user = @user
     @meigen.book_url = "www.sakurainaoya"
     @meigen.save
-    # @twitter_card = "#{root_url}meigens/#{@meigen.id}"
+    @twitter_card = "#{root_url}meigens/#{@meigen.id}"
   end
 
   def show
