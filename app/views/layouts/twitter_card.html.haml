@@ -8,7 +8,7 @@
     %meta{:content => "#{@twitter_card}", :property => "og:url"}
     %meta{:content => "名言APP", :property => "og:title"}
     %meta{:content => "あなたが共感した名言は？", :property => "og:description"}
-    %meta{:content => "provisional/#{@meigen.content}", :property => "og:image"}
+    %meta{:content => "http://meigenapp.herokuapp.com/images/#{@meigen.content}", :property => "og:image"}
     %title MeigenApp
     = csrf_meta_tags
     = csp_meta_tag
