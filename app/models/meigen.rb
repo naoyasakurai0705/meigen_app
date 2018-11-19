@@ -5,12 +5,13 @@ require 'RMagick'
   mount_uploader :image, ImageUploader
 
   def create_image(sentence,user)
+    font = 'app/assets/fonts/Harenosora.otf'
  	  img = Magick::ImageList.new("app/assets/images/sample/sample.jpg")
     img_resize = img.resize_to_fit(600, 314)
     dr = Magick::Draw.new
     dr.annotate(img_resize, 0, 0, 0, 0, sentence) do
       self.fill = 'black'
-      self.font = 'ArialUnicode'
+      self.font = font
       self.pointsize = 20
       self.gravity = Magick::CenterGravity
     end
