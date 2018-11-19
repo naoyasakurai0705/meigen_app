@@ -17,7 +17,7 @@
 /storage/*
 !/storage/.keep
 /app/assets/images/meigen_image/*
-/app/assets/images/provisional/*
+# /app/assets/images/provisional/*
 #仮置き名言イメージ
 
 /node_modules
