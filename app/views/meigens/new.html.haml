@@ -8,7 +8,7 @@
       = form_tag twitter_tweet_path, method: "GET" do
         .form-group.mt-4
           = label_tag :text, "シェアしたい名言"
-          = text_area_tag :text, @twitter_card, class: 'form-control', rows: "5" , name: "text"
+          = text_area_tag :text,"", class: 'form-control', rows: "5" , name: "text"
         .small.samll.mb-2 ＊ツイートするとあなたのタイムラインに直接投稿されます。
         = submit_tag 'ツイートする', class: 'btn btn-primary'
       .mt-4

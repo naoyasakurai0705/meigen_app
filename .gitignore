@@ -16,6 +16,7 @@
 # Ignore uploaded files in development
 /storage/*
 !/storage/.keep
+/app/assets/images/provisional/*
 #仮置き名言イメージ
 
 /node_modules
