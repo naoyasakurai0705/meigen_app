@@ -10,7 +10,7 @@ class MeigensController < ApplicationController
     @meigen.create_image(params[:sentence],@user)
     @meigen.content = "#{@user.id}-#{Time.now.to_s.delete!(' +:-')}.jpg"
     @meigen.user = @user
-    @meigen.book_url = "www.sakurainasoya"
+    @meigen.book_url = "www.sakurainaoya"
     @meigen.save
     # @twitter_card = "#{root_url}meigens/#{@meigen.id}"
   end
