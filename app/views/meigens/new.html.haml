@@ -1,1 +1,16 @@
-%p 画像生成ページ！！
+.container-fluid
+  .row
+    .col-md-3.col-sm-2.col-12
+    .col-md-6.co1-sm-8.col-12.text-center
+      %h3.mt-5 名言画像を生成しました
+      - if "app/assets/images/provisional/#{@meigen.content}"
+        = image_tag "provisional/#{@meigen.content}" ,class: "img-fluid"
+      = form_tag twitter_tweet_path, method: "GET" do
+        .form-group.mt-4
+          = label_tag :text, "シェアしたい名言"
+          = text_area_tag :text, @twitter_card, class: 'form-control', rows: "5" , name: "text"
+        .small.samll.mb-2 ＊ツイートするとあなたのタイムラインに直接投稿されます。
+        = submit_tag 'ツイートする', class: 'btn btn-primary'
+      .mt-4
+        = link_to "戻る" ,root_path
+
