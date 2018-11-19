@@ -7,11 +7,11 @@ class BooksAPI
 
 #ページネーションのせいで１０個しか取れない！！
   def self.fetch(url, query)
-    author = query[:author].present?? "inauthor:"+query[:author] : ""
-    title = query[:title].present?? "intitle:"+query[:title] : ""
+    title = query[:title].present?? "intitle:"+query[:title] + "&" : ""
+    author = query[:author].present?? "inauthor:"+query[:author] + "&" : ""
     uri = URI.parse url
 
-    uri.query ="q=#{author}&#{title}&key=#{ENV['GOOGLE_API_KEY']}"
+    uri.query ="q=#{title}#{author}key=#{ENV['GOOGLE_API_KEY']}"
 
     https = Net::HTTP.new(uri.host, uri.port)
     https.use_ssl = true

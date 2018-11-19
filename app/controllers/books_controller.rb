@@ -3,7 +3,7 @@ class BooksController < ApplicationController
 
   def new
     url = "https://www.googleapis.com/books/v1/volumes"
-    query = {author:"尾田" , title:"ワンピース"}
+    query = {title: params["title"], author:params["author"]}
     @book = BooksAPI.fetch(url, query)
     render :json => @book
   end
