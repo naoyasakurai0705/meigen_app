@@ -22,7 +22,7 @@
 /yarn-error.log
 
 /public/assets
-public/images/*
+# public/images/*
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
