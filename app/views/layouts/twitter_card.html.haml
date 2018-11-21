@@ -5,10 +5,10 @@
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
     %meta{:content => "summary_large_image", :name => "twitter:card"}
     %meta{:content => "@#{@user.nickname}", :name => "twitter:site"}
-    %meta{:content => "@#{@twitter_card}", :property => "og:url"}
+    %meta{:content => "#{@twitter_card}", :property => "og:url"}
     %meta{:content => "名言APP", :property => "og:title"}
     %meta{:content => "あなたが共感した名言は？", :property => "og:description"}
-    %meta{:content => "provisional/#{@meigen.content}", :property => "og:image"}
+    %meta{:content => "http://meigenapp.herokuapp.com/images/#{@meigen.content}", :property => "og:image"}
     %title MeigenApp
     = csrf_meta_tags
     = csp_meta_tag
