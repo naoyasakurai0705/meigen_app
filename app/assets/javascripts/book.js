@@ -1,8 +1,16 @@
 var xmlHttp;
+var src_rslt_container = document.getElementById('src_rslt_container');
+var input_book_container = document.getElementById('input_book_container');
 
 function loadText(){
   var title = document.getElementById("title").value
   var author = document.getElementById("author").value
+  while (src_rslt_container.hasChildNodes()) {
+    src_rslt_container.removeChild(src_rslt_container.firstChild)
+  }
+  while (input_book_container.hasChildNodes()) {
+    input_book_container.removeChild(input_book_container.firstChild)
+  }
 
   if (title == "" && author == ""){
     var err_msg = document.createElement('div');
@@ -24,10 +32,6 @@ function loadText(){
 }
 
 function createInput(obj) {
-  console.log("Success")
-  console.log(obj)
-  var input_book_container = document.getElementById('input_book_container')
-  var src_rslt_container = document.getElementById('src_rslt_container')
   var input_heading = document.createElement('div')
   var input_book = document.createElement('div')
   var heading = document.createElement('h6')
@@ -69,6 +73,7 @@ function createInput(obj) {
   while (input_book_container.hasChildNodes()) {
     input_book_container.removeChild(input_book_container.firstChild)
   }
+
   var book_frag = document.createDocumentFragment()
   input_heading.appendChild(heading);
   book_frag.appendChild(input_title)
@@ -78,14 +83,11 @@ function createInput(obj) {
   input_book.appendChild(book_frag);
   input_book_container.appendChild(input_heading);
   input_book_container.appendChild(input_book);
-
 }
 
 function checkStatus(){
   if (xmlHttp.readyState == 4 && xmlHttp.status == 200){
     var data = JSON.parse(xmlHttp.responseText);
-    var src_rslt_container = document.getElementById("src_rslt_container");
-    // var inner_container = document.getElementById('inner_container');
 
     var heading_space = document.createElement('div');
     heading_space.className = 'heading_space';
@@ -112,13 +114,16 @@ function checkStatus(){
         var li = document.createElement('li');
         li.id = `result_${i}`;
         li.setAttribute('onClick', 'createInput(this)');
+        li.setAttribute('data-toggle', 'popover');
+        var mask = document.createElement('div');
+        mask.className = 'mask'
         var result_space = document.createElement('div');
-        result_space.className = 'result_space';
-        var image_space = document.createElement('div');
-        image_space.className = 'image_space';
-        var image = document.createElement('img');
-        image.setAttribute("src", "https://images-fe.ssl-images-amazon.com/images/I/41AjVRdoNvL._AC_US200_.jpg" );
-        image_space.appendChild(image);
+        result_space.className = 'result_space pb-1 pt-1';
+        // var image_space = document.createElement('div');
+        // image_space.className = 'image_space';
+        // var image = document.createElement('img');
+        // image.setAttribute("src", "https://images-fe.ssl-images-amazon.com/images/I/41AjVRdoNvL._AC_US200_.jpg" );
+        // image_space.appendChild(image);
 
         var text_space = document.createElement('div')
         text_space.className = 'text_space pt-2'
@@ -126,6 +131,7 @@ function checkStatus(){
         var title_space = document.createElement('div')
         title_space.className = 'title_space'
         var title = document.createElement('h6');
+        title.className = 'book_title';
         title.innerHTML = result.title
         title_space.appendChild(title);
         var author_space = document.createElement('div')
@@ -154,9 +160,10 @@ function checkStatus(){
         text_frag.appendChild(publishedDate_space);
         text_space.appendChild(text_frag);
 
-        result_space.appendChild(image_space);
+        // result_space.appendChild(image_space);
         result_space.appendChild(text_space);
-        li.appendChild(result_space);
+        li.appendChild(mask);
+        mask.appendChild(result_space);
         frag.appendChild(li);
       }
       ul.appendChild(frag);
