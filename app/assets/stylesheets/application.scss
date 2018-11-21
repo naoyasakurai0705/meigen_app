@@ -19,7 +19,6 @@
 .main-color {
   color: $main-color;
 }
-
 .main-bk-color {
   background-color: $main-bk-color;
 }
@@ -31,6 +30,29 @@
 
 body{
   font-family: 'hoge';
+}
+
+ul.results_list {
+  li {
+    border-bottom: dotted;
+    cursor: pointer;
+    .book_title{
+      font-style: oblique;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.results_list .mask{
+  background-color: rgba(0, 0 ,0,0);
+  transition: all 0.3s ease-in-out;
+}
+
+.results_list {
+  li:hover .mask{
+    opacity: 0.8;
+    background-color: rgba(0, 0, 0, 0.05);
+  }
 }
 
 #input_title {
