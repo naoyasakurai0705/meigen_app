@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :meigens, only: [:index, :new ,:show]
   resources :twitters, only: [:update]
   get '/twitter/tweet', to: 'twitter#tweet'
+  get'books/new', to: 'books#new'
 
 end
